@@ -26,4 +26,14 @@ public class UserCreateService {
 
         userCreateRepository.save(user);
     }
+    public boolean authenticateUser(String username, String password) {
+        // Fetch the user by username
+        UserCreate user = userCreateRepository.findByUsername(username);
+        
+        if (user != null) {
+            // Check if the entered password matches the stored (encrypted) password
+            return passwordEncoder.matches(password, user.getPassword());
+        }
+        return false;  // Username not found
+    }
 }

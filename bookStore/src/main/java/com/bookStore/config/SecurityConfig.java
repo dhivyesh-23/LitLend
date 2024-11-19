@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests(requests -> requests
-                        .antMatchers("/", "/home", "/register", "/userlogin", "/stafflogin","/createuser","/staffdashboard","/userdashboard", "/resources/**", "/static/**").permitAll()  // Allow access to these pages without authentication
+                        .antMatchers("/", "/home","/bookEdit", "/register", "/userlogin", "/stafflogin","/createuser","/staffdashboard","/userdashboard","/bookEdit","/bookList","/bookRegister","/myBooks", "/resources/**", "/static/**").permitAll()  // Allow access to these pages without authentication
                         .anyRequest().authenticated())
                 .formLogin(login -> login
                         .loginPage("/login")

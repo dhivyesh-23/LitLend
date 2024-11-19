@@ -24,7 +24,7 @@
     <div class="container">
       <div class="login-container">
         <h2 class="text-center mb-4">Login</h2>
-        <form action="/user_dashboard" method="post" th:action="@{/user_dashboard}">
+        <form action="/userlogin" method="post" th:action="@{/userlogin}">
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
@@ -37,6 +37,12 @@
             <button type="submit" class="btn btn-primary btn-block">Login</button>
           </div>
         </form>
+        
+        <!-- Display error message if authentication fails -->
+        <div class="text-center mt-4" th:if="${error}">
+          <p class="text-danger" th:text="${error}"></p>
+        </div>
+
         <div class="text-center mt-4">
           <p>Don't have an account? 
             <a href="createuser.html" th:href="@{/createuser}" class="text-decoration-none">Create one</a>
