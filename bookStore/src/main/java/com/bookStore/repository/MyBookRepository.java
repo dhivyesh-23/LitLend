@@ -9,3 +9,4 @@ import com.bookStore.entity.MyBookList;
 public interface MyBookRepository extends JpaRepository<MyBookList,Integer>{
 
 }
+

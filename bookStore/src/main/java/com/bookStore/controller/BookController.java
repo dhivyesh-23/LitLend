@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bookStore.entity.Book;
 import com.bookStore.entity.MyBookList;
+import com.bookStore.entity.UserCreate;
 import com.bookStore.service.BookService;
 import com.bookStore.service.MyBookListService;
 
@@ -26,6 +27,15 @@ public class BookController {
 	public String home() {
 		return "home";
 	}
+	@GetMapping("/userlogin")
+    public String userLogin() {
+        return "userlogin"; // userlogin.html
+    }
+	
+    @GetMapping("/stafflogin")
+    public String staffLogin() {
+        return "stafflogin"; // stafflogin.html
+    }
 	
 	@GetMapping("/book_register")
 	public String bookRegister() {

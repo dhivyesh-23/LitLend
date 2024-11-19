@@ -16,7 +16,7 @@ public class MyBookList {
 	private String price;
 	public MyBookList() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 	public MyBookList(int id, String name, String author, String price) {
 		super();
