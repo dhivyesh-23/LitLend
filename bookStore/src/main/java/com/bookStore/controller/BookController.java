@@ -54,21 +54,21 @@ public class BookController {
 	@PostMapping("/save")
 	public String addBook(@ModelAttribute Book b) {
 		service.save(b);
-		return "redirect:/available_books";
+		return "redirect:/staffdashboard";
 	}
-	@GetMapping("/my_books")
+	@GetMapping("/mybooks")
 	public String getMyBooks(Model model)
 	{
 		List<MyBookList>list=myBookService.getAllMyBooks();
 		model.addAttribute("book",list);
-		return "myBooks";
+		return "mybooks";
 	}
-	@RequestMapping("/mylist/{id}")
+	@RequestMapping("/booklist/{id}")
 	public String getMyList(@PathVariable("id") int id) {
 		Book b=service.getBookById(id);
 		MyBookList mb=new MyBookList(b.getId(),b.getName(),b.getAuthor(),b.getPrice());
 		myBookService.saveMyBooks(mb);
-		return "redirect:/my_books";
+		return "redirect:/bookList";
 	}
 	
 	@RequestMapping("/editBook/{id}")
